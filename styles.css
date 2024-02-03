@@ -1,0 +1,254 @@
+/* Reset some default styles */
+body, h1, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px;
+    position: relative; /* Add position relative */
+}
+
+.logo {
+    width: 130px;
+    height: 80px;
+}
+
+/* Dark Mode Toggle Switch Styles */
+.switch-container {
+    position: relative;
+    display: inline-block;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-left: 10px; /* Added margin for spacing */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px;
+}
+
+.slider i {
+    font-size: 12px;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Add transitions */
+}
+
+.slider i.fa-sun {
+    color: #d4af37; /* Change sun color to #d4af37 in dark mode */
+}
+
+input:checked + .slider {
+    background-color: #555; /* Darker background in dark mode */
+}
+
+input:checked + .slider i.fa-moon {
+    opacity: 0; /* Make the moon icon disappear in dark mode */
+    transform: translateX(20px); /* Roll the sun icon to the left */
+}
+
+input:checked + .slider i.fa-sun {
+    transform: translateX(0); /* Reset the sun icon position in dark mode */
+    opacity: 1; /* Make the sun icon visible in dark mode */
+}
+
+input:not(:checked) + .slider i.fa-sun {
+    opacity: 0; /* Make the sun icon disappear in light mode */
+    transform: translateX(-20px); /* Roll the moon icon to the right */
+}
+
+input:not(:checked) + .slider i.fa-moon {
+    transform: translateX(0); /* Reset the moon icon position in light mode */
+    opacity: 1; /* Make the moon icon visible in light mode */
+}
+
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f8f8; /* Lighter background in default mode */
+    color: #333; /* Darker text color in default mode */
+}
+
+.dark .main-content {
+    background-color: #333; /* Darker background in dark mode */
+    color: #f8f8f8; /* Lighter text color in dark mode */
+}
+
+h1 {
+    font-size: 35px; /* Increased font size */
+    margin-bottom: 20px;
+}
+
+/* Search Bar Styles */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align to the right by default */
+    margin-bottom: 20px; /* Add margin for spacing */
+}
+
+#searchInput {
+    padding: 13.5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px; /* Add space between input and button */
+    width: 200px; /* Adjust width as needed */
+}
+
+#searchButton {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Add a transition effect */
+}
+
+.dark #searchButton {
+    background-color: #555; /* Darker background in dark mode */
+}
+
+#searchButton img {
+    width: 20px; /* Adjust icon size */
+    height: 20px;
+    filter: invert(1); /* Invert icon color for better visibility */
+}
+
+/* Article Grid Styles */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px; /* Increased gap between articles */
+    justify-content: space-evenly; /* Added space between and spread them */
+}
+
+.article {
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Added border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow */
+    padding: 20px; /* Increased padding */
+    text-align: center;
+    background-color: #fff; /* Lighter background in default mode */
+    transition: transform 0.3s ease-in-out; /* Added a smooth transition */
+}
+
+.article:hover {
+    transform: scale(1.05); /* Enlarge on hover effect */
+}
+
+.dark .article {
+    background-color: #444; /* Darker background in dark mode */
+    border-color: #666; /* Darker border color in dark mode */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Adjusted box shadow in dark mode */
+}
+
+.article img {
+    width: 100%;
+    height: auto;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000000;
+    color: #d4af37;
+    padding: 10px;
+    text-align: center;
+    font-size: small;
+    display: flex;
+    justify-content: space-between; /* Add space between items */
+    align-items: center; /* Center items vertically */
+}
+
+.email-subscription {
+    margin-top: 10px;
+    text-align: right; /* Align to the right by default */
+}
+
+.email-subscription label {
+    display: block; /* Ensure label takes full width */
+}
+
+.email-subscription button {
+    background-color: #d4af37; /* Change to the desired color */
+    color: white; /* Text color */
+    border: none;
+    padding: 5px 10px; /* Adjust padding for better appearance */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: xx-small;
+}
+
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .switch {
+        margin-left: auto; /* Move the toggle switch to the right */
+    }
+
+
+    .search-bar {
+        justify-content: center; /* Center in mobile mode */
+    }
+
+    #searchInput {
+        width: 100%; /* Take full width in mobile mode */
+        margin-right: 0; /* Remove margin in mobile mode */
+    }
+
+    #searchButton {
+        margin-left: 10px; /* Add space between input and button in mobile mode */
+    }
+    .article-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .email-subscription {
+        text-align: center; /* Center the email subscription in mobile view */
+    }
+}
