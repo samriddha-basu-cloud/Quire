@@ -5,10 +5,30 @@ body, h1, p, ul {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: #d4af37;
+    background: #0c0916;
+}
+
+::selection {
+    color: #d4af37;
+    background: #0c0916;
+}
+
+.dark ::selection {
+    background: #d4af37;
+    color: #0c0916;
+}
+
+.dark ::-moz-selection {
+    background: #d4af37;
+    color: #0c0916;
 }
 
 /* Navbar Styles */
@@ -19,6 +39,11 @@ body {
     background-color: #000000;
     padding: 10px;
     position: relative; /* Add position relative */
+    box-shadow: 0 10px 55px rgba(209, 70, 70, 0.5);
+}
+
+.dark .navbar{
+    box-shadow: 0 10px 55px rgba(212, 175, 55, 0.5);
 }
 
 .logo {
@@ -53,7 +78,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #d4af37;
     transition: .4s;
     border-radius: 20px;
     display: flex;
@@ -72,7 +97,7 @@ body {
 }
 
 input:checked + .slider {
-    background-color: #555; /* Darker background in dark mode */
+    background-color: #210e63; /* Darker background in dark mode */
 }
 
 input:checked + .slider i.fa-moon {
@@ -99,19 +124,25 @@ input:not(:checked) + .slider i.fa-moon {
 /* Main Content Styles */
 .main-content {
     flex: 1;
-    padding: 20px;
-    background-color: #f8f8f8; /* Lighter background in default mode */
+    padding: 120px;
+    background-color: #d4af37; /* Lighter background in default mode */
     color: #333; /* Darker text color in default mode */
 }
 
 .dark .main-content {
-    background-color: #333; /* Darker background in dark mode */
+    background-color: #0c0916; /* Darker background in dark mode */
     color: #f8f8f8; /* Lighter text color in dark mode */
 }
 
 h1 {
     font-size: 35px; /* Increased font size */
     margin-bottom: 20px;
+    color: brown;
+    text-shadow: #ddd;
+}
+
+.dark h1 {
+    color: #d4af37;
 }
 
 /* Search Bar Styles */
@@ -160,7 +191,7 @@ h1 {
 .article {
     border: 1px solid #ddd;
     border-radius: 10px; /* Added border radius */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow */
+    box-shadow: 0 4px 8px rgba(209, 70, 70, 0.5); /* Added box shadow */
     padding: 20px; /* Increased padding */
     text-align: center;
     background-color: #fff; /* Lighter background in default mode */
@@ -172,9 +203,9 @@ h1 {
 }
 
 .dark .article {
-    background-color: #444; /* Darker background in dark mode */
+    background-color: #242424; /* Darker background in dark mode */
     border-color: #666; /* Darker border color in dark mode */
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Adjusted box shadow in dark mode */
+    box-shadow: 0 4px 8px rgba(212, 175, 55, 0.5); /* Adjusted box shadow in dark mode */
 }
 
 .article img {
@@ -192,6 +223,11 @@ footer {
     display: flex;
     justify-content: space-between; /* Add space between items */
     align-items: center; /* Center items vertically */
+    box-shadow: 0 -10px 55px rgba(209, 70, 70, 0.5);
+}
+
+.dark footer{
+    box-shadow: 0 -5px 15px rgba(212, 175, 55, 0.5);
 }
 
 .email-subscription {
@@ -216,6 +252,11 @@ footer {
 
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
+
+    .main-content {
+        padding: 40px;
+    }
+
     .navbar {
         flex-direction: row;
         align-items: center;
