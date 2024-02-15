@@ -185,7 +185,8 @@ h1 {
 /* Article Grid Styles */
 .article-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 40px; /* Increased gap between articles */
     justify-content: space-evenly; /* Added space between and spread them */
 }
@@ -289,7 +290,6 @@ footer {
 }
 
 
-
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
 
@@ -333,3 +333,4 @@ footer {
         text-align: center; /* Center the email subscription in mobile view */
     }
 }
+
