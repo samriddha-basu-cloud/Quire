@@ -27,30 +27,40 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Get the search input field
-const searchInput = document.getElementById('searchInput');
+  // Get the search input field and search button
+  const searchInput = document.getElementById('searchInput');
+  const searchButton = document.getElementById('searchButton');
 
-// Add event listener for input changes
-searchInput.addEventListener('input', function () {
-    // Get the search query
-    const searchQuery = searchInput.value.toLowerCase();
+  // Add click event listener to the search button
+  searchButton.addEventListener('click', function () {
+      // Get the search query
+      const searchQuery = searchInput.value.trim().toLowerCase();
 
-    // Get all article titles
-    const articleTitles = document.querySelectorAll('.article-title');
+      // Get all article titles
+      const articleTitles = document.querySelectorAll('.article-title');
 
-    // Loop through each article title
-    articleTitles.forEach(function (title) {
-        // Get the article title text content
-        const articleTitle = title.textContent.toLowerCase();
+      // Loop through each article title
+      articleTitles.forEach(function (title) {
+          // Get the article title text content
+          const articleTitle = title.textContent.toLowerCase();
 
-        // Check if the article title contains the search query
-        const isMatch = articleTitle.includes(searchQuery);
+          // Check if the search query is empty or the article title contains the search query
+          const isMatch = searchQuery === '' || articleTitle.includes(searchQuery);
 
-        // Get the parent article grid element
-        const articleGrid = title.closest('.article');
+          // Get the parent article grid element
+          const articleGrid = title.closest('.article');
 
-        // Show or hide the article grid based on the search result
-        articleGrid.style.display = isMatch ? 'block' : 'none';
-    });
-});
+          // Show or hide the article grid based on the search result
+          articleGrid.style.display = isMatch ? 'block' : 'none';
+      });
+  });
 
+  // Immediately display all articles when the search bar is empty
+  searchInput.addEventListener('input', function () {
+      if (searchInput.value.trim() === '') {
+          const articleGrids = document.querySelectorAll('.article');
+          articleGrids.forEach(function (grid) {
+              grid.style.display = 'block';
+          });
+      }
+  });
