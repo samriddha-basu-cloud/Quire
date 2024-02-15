@@ -47,8 +47,8 @@ body {
 }
 
 .logo {
-    width: 130px;
-    height: 80px;
+    width: 150px;
+    height: 85px;
     margin-left: 20px;
 }
 
@@ -292,6 +292,10 @@ footer {
 
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
+
+    .logo {
+        margin-left: 5px;
+    }
 
     .main-content {
         padding: 40px;
