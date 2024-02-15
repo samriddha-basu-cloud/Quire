@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to set theme
     function setTheme(isDarkMode) {
         const logoPath = 'assets/images/whiteLogo.png'; // Always use white logo
+        const transitionDuration = '2s'; // Transition duration
+        document.body.style.transition = `background-color ${transitionDuration}`; // Add transition for background color
         document.body.classList.toggle('dark', isDarkMode);
         logo.src = logoPath;
     }

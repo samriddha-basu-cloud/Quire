@@ -12,22 +12,22 @@ body {
 }
 
 ::-moz-selection { /* Code for Firefox */
-    color: #d4af37;
+    color: #FFE5B4;
     background: #0c0916;
 }
 
 ::selection {
-    color: #d4af37;
+    color: #FFE5B4;
     background: #0c0916;
 }
 
 .dark ::selection {
-    background: #d4af37;
+    background: #FFE5B4;
     color: #0c0916;
 }
 
 .dark ::-moz-selection {
-    background: #d4af37;
+    background: #FFE5B4;
     color: #0c0916;
 }
 
@@ -49,6 +49,7 @@ body {
 .logo {
     width: 130px;
     height: 80px;
+    margin-left: 20px;
 }
 
 /* Dark Mode Toggle Switch Styles */
@@ -63,6 +64,7 @@ body {
     width: 40px;
     height: 20px;
     margin-left: 10px; /* Added margin for spacing */
+    margin-right: 30px; /* Add gap on the right */
 }
 
 .switch input {
@@ -78,7 +80,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #d4af37;
+    background-color: #FFE5B4;
     transition: .4s;
     border-radius: 20px;
     display: flex;
@@ -93,7 +95,7 @@ body {
 }
 
 .slider i.fa-sun {
-    color: #d4af37; /* Change sun color to #d4af37 in dark mode */
+    color: #FFE5B4; /* Change sun color to #FFE5B4 in dark mode */
 }
 
 input:checked + .slider {
@@ -125,7 +127,7 @@ input:not(:checked) + .slider i.fa-moon {
 .main-content {
     flex: 1;
     padding: 120px;
-    background-color: #d4af37; /* Lighter background in default mode */
+    background-color: #FFE5B4; /* Lighter background in default mode */
     color: #333; /* Darker text color in default mode */
 }
 
@@ -142,7 +144,7 @@ h1 {
 }
 
 .dark h1 {
-    color: #d4af37;
+    color: #FFE5B4;
 }
 
 /* Search Bar Styles */
@@ -191,7 +193,7 @@ h1 {
 .article {
     border: 1px solid #ddd;
     border-radius: 10px; /* Added border radius */
-    box-shadow: 0 4px 8px rgba(209, 70, 70, 0.5); /* Added box shadow */
+    box-shadow: 0 4px 18px rgba(209, 70, 70, 0.5); /* Added box shadow */
     padding: 20px; /* Increased padding */
     text-align: center;
     background-color: #fff; /* Lighter background in default mode */
@@ -205,18 +207,46 @@ h1 {
 .dark .article {
     background-color: #242424; /* Darker background in dark mode */
     border-color: #666; /* Darker border color in dark mode */
-    box-shadow: 0 4px 8px rgba(212, 175, 55, 0.5); /* Adjusted box shadow in dark mode */
+    box-shadow: 0 4px 18px rgba(212, 175, 55, 0.5); /* Adjusted box shadow in dark mode */
 }
 
-.article img {
+.article-img {
     width: 100%;
     height: auto;
+    border-radius: 5px; /* Add border radius */
+}
+
+.article-title {
+    font-weight: bold; /* Add significant font weight */
+}
+
+.article-excerpt {
+    margin-top: 5px; /* Add space between title and excerpt */
+}
+
+.dark .read-more {
+    color: #FFE5B4;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.read-more {
+    text-decoration: none;
+    transition: 1s;
+}
+
+.read-more:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.dark .read-more:hover {
+    text-decoration: underline; /* Add underline on hover */
 }
 
 /* Footer Styles */
 footer {
     background-color: #000000;
-    color: #d4af37;
+    color: #FFE5B4;
     padding: 10px;
     text-align: center;
     font-size: small;
@@ -233,6 +263,8 @@ footer {
 .email-subscription {
     margin-top: 10px;
     text-align: right; /* Align to the right by default */
+    font-family:'Times New Roman', Times, serif; /* Change font family */
+    font-size: small; /* Adjust font size */
 }
 
 .email-subscription label {
@@ -240,14 +272,22 @@ footer {
 }
 
 .email-subscription button {
-    background-color: #d4af37; /* Change to the desired color */
-    color: white; /* Text color */
+    background-color: #FFE5B4; /* Change to the desired color */
+    color: black; /* Text color */
     border: none;
-    padding: 5px 10px; /* Adjust padding for better appearance */
+    padding: 4px 10px; /* Adjust padding for better appearance */
     border-radius: 5px;
     cursor: pointer;
-    font-size: xx-small;
+    font-size: xx-small; /* Adjust font size */
+    margin-right: 0px; /* Add gap on the right */
 }
+
+#email::placeholder {
+    font-size: xx-small; /* Adjust the font size of the placeholder text */
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+}
+
 
 
 /* Responsive Styles */
