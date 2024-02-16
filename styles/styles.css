@@ -222,10 +222,37 @@ h1 {
 
 .article-title {
     font-weight: bold; /* Add significant font weight */
+    color: brown
+}
+
+.dark .article-title {
+    color: #FFE5B4;
 }
 
 .article-excerpt {
     margin-top: 5px; /* Add space between title and excerpt */
+}
+
+.article-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px; /* Adjust as needed */
+}
+
+.article-meta {
+    display: flex;
+    justify-content: center; /* Center align the content */
+    margin-top: 5px; /* Adjust as needed */
+    font-size: x-small;color: brown
+}
+
+.dark .article-meta {
+    color: #FFE5B4;
+}
+
+.article-meta p {
+    margin: 0;
+    margin-right: 10px; /* Adjust as needed */
 }
 
 .dark .read-more {
@@ -344,14 +371,13 @@ footer {
 
 /* Article Pages */
 
-.main-content .art-content{
+.main-content .art-content {
     padding: 0px;
 }
 
-.article-title-h1{
+.article-title-h1 {
     font-size: 40px;
     margin-bottom: 20px;
-
 }
 
 /* Center and adjust size of the article image */
@@ -360,7 +386,7 @@ footer {
     margin: 0 auto; /* Center the image horizontally */
     max-width: 100%; /* Ensure the image does not exceed its container's width */
     height: auto; /* Allow the height to adjust proportionally based on the width */
-    width: 50%; /* Set the desired width of the image */
+    width: 30%; /* Set the desired width of the image */
     border-radius: 10px;
     box-shadow: 0 10px 55px rgba(209, 70, 70, 0.5);
 }
@@ -370,7 +396,6 @@ footer {
 }
 
 .author-info {
-
     display: flex;
     align-items: center;
     margin-bottom: 20px; /* Adjust spacing as needed */
@@ -386,6 +411,10 @@ footer {
 .author-details {
     display: flex;
     align-items: center;
+    color: brown;
+}
+
+.dark .author-details {
     color: #FFE5B4;
 }
 
@@ -400,4 +429,41 @@ footer {
 
 .author-details p i {
     margin-right: 5px; /* Adjust spacing between icon and text */
+}
+
+.article-excerpt {
+    text-align: justify;
+    color: brown;
+}
+
+.article-excerpt .article-page {
+    padding-top: 120px; /* Add space between the excerpt and the article page */
+}
+
+.dark .article-excerpt {
+    color: #FFE5B4;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .article-title-h1 {
+        font-size: 30px; /* Decrease font size for smaller screens */
+    }
+
+    .article-image {
+        width: 100%; /* Set image width to 100% for smaller screens */
+    }
+
+    .author-info {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start of the container */
+    }
+
+    .author-picture {
+        margin-bottom: 10px; /* Adjust spacing between author picture and details */
+    }
+
+    .author-details {
+        font-size: xx-small;
+    }
 }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <script defer src="/script/script.js"></script>
+    <title>Quire - Your Technical Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img class="logo" id="logo" src="/assets/images/whiteLogo.png" alt="Quire Logo">
+        
+        <!-- Dark Mode Toggle Switch -->
+        <div class="switch-container">
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider">
+                    <i class="fas fa-moon"></i> <!-- Moon icon for light mode -->
+                    <i class="fas fa-sun"></i> <!-- Sun icon for dark mode -->
+                </span>
+            </label>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <div class="main-content art-content">
+            <!-- Article -->
+            <img src="./article_Pic.png" alt="Article Picture" class="article-image">
+            <h1 class="article-title-h1">Computer Networks</h1>
+            <div class="author-info">
+                <img src="/assets/images/author_picture.png" alt="Author Picture" class="author-picture">
+                <div class="author-details">
+                    <p>Samriddha Basu</p>
+                    <p>February 15, 2024</p>
+                    <p><i class="fas fa-tag"></i> Connection, 
+                        Nodes
+                    </p>
+                </div>
+            </div>
+
+            <div class="article-excerpt">
+                <h2>What is a Computer Network?</h2>
+                <p>A computer network is a collection of interconnected devices and systems that can communicate with each other and share resources. These devices can include computers, servers, routers, switches, and other networking hardware.</p>
+
+                <h2>Key Concepts of Computer Networks:</h2>
+                <ul>
+                    <li><strong>Nodes:</strong> Nodes are individual devices connected to the network, such as computers or servers.</li>
+                    <li><strong>Links:</strong> Links are physical or wireless connections that allow nodes to communicate with each other, such as Ethernet cables or Wi-Fi connections.</li>
+                    <li><strong>Protocols:</strong> Protocols are rules and conventions that govern communication between devices on a network. Examples include TCP/IP (Transmission Control Protocol/Internet Protocol) for the Internet and HTTP (Hypertext Transfer Protocol) for web browsing.</li>
+                    <li><strong>Topologies:</strong> Network topologies refer to the physical or logical layout of the network, such as bus, star, ring, or mesh topologies.</li>
+                    <li><strong>LAN, WAN, and MAN:</strong> LAN (Local Area Network) covers a small geographic area, WAN (Wide Area Network) spans large distances and connects multiple LANs, and MAN (Metropolitan Area Network) falls between LAN and WAN in terms of size and coverage.</li>
+                </ul>
+
+                <h2>Types of Computer Networks:</h2>
+                <ul>
+                    <li><strong>Local Area Network (LAN):</strong> A LAN covers a small geographical area, such as a home, office, or campus. It typically uses Ethernet cables or Wi-Fi to connect devices.</li>
+                    <li><strong>Wide Area Network (WAN):</strong> A WAN spans large distances and connects multiple LANs or other networks. It can use technologies like leased lines, satellite links, or fiber optic cables.</li>
+                    <li><strong>Wireless Networks:</strong> Wireless networks use radio waves to transmit data between devices, eliminating the need for physical cables. Examples include Wi-Fi, Bluetooth, and cellular networks.</li>
+                    <li><strong>Internet:</strong> The Internet is a global network of networks that connects millions of devices worldwide. It enables communication, information sharing, and online services.</li>
+                </ul>
+
+                <h2>Networking Devices:</h2>
+                <ul>
+                    <li><strong>Router:</strong> A router is a networking device that forwards data packets between computer networks. It connects different networks and enables communication between them.</li>
+                    <li><strong>Switch:</strong> A switch is a networking device that connects devices within a single network. It forwards data packets to the appropriate destination based on the device's MAC address.</li>
+                    <li><strong>Modem:</strong> A modem is a device that modulates and demodulates digital signals to enable communication over analog telephone lines or digital communication channels.</li>
+                    <li><strong>Firewall:</strong> A firewall is a security device or software that monitors and controls incoming and outgoing network traffic based on predetermined security rules.</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Computer networks play a crucial role in modern communication and information exchange. By understanding the key concepts, types, and devices involved in computer networking, you can build and maintain efficient and reliable networks to support various applications and services.</p>
+
+
+            </div>
+            
+        </div>
+        
+            
+        
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="currentYear"></span>. Your One Stop Technical Blog. All rights reserved.</p>
+        <div class="email-subscription">
+            <label for="email">Subscribe to our newsletter:</label>
+            <br>
+            <input type="email" id="email" name="email" placeholder="Your email" style="border-radius: 5px;">
+            <button type="button">Subscribe</button>
+        </div>
+    </footer>
+</body>
+
+</html>

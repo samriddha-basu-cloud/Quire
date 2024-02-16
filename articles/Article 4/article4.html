@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <script defer src="/script/script.js"></script>
+    <title>Quire - Your Technical Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img class="logo" id="logo" src="/assets/images/whiteLogo.png" alt="Quire Logo">
+        
+        <!-- Dark Mode Toggle Switch -->
+        <div class="switch-container">
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider">
+                    <i class="fas fa-moon"></i> <!-- Moon icon for light mode -->
+                    <i class="fas fa-sun"></i> <!-- Sun icon for dark mode -->
+                </span>
+            </label>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <div class="main-content art-content">
+            <!-- Article -->
+            <img src="./article_Pic.png" alt="Article Picture" class="article-image">
+            <h1 class="article-title-h1">Errors & Their Types</h1>
+            <div class="author-info">
+                <img src="/assets/images/author_picture.png" alt="Author Picture" class="author-picture">
+                <div class="author-details">
+                    <p><strong>Samriddha Basu</strong></p>
+                    <p>February 15, 2024</p>
+                    <p><i class="fas fa-tag"></i> Git, 
+                        Error, 
+                        Handling
+                    </p>
+                </div>
+            </div>
+
+            <div class="article-excerpt article-page">
+                <h2>What are Errors?</h2>
+                    <p>In programming, an error refers to any deviation from the expected behavior of a program. Errors can occur during different stages of software development, including coding, compilation, and execution.</p>
+
+                    <h2>Types of Errors:</h2>
+                    <ul>
+                        <li><strong>Syntax Errors:</strong> Syntax errors occur when the code violates the rules of the programming language syntax. These errors are detected by the compiler or interpreter during the compilation or parsing phase. Examples include missing semicolons, mismatched parentheses, or incorrect keyword usage.</li>
+                        <li><strong>Logic Errors:</strong> Logic errors, also known as semantic errors, occur when the code performs an unintended action due to a mistake in the program's logic. These errors can be challenging to identify because the code may execute without raising any syntax or runtime errors. Examples include incorrect conditional statements, algorithmic mistakes, or off-by-one errors.</li>
+                        <li><strong>Runtime Errors:</strong> Runtime errors occur during the execution of the program when an unexpected condition or event arises. These errors typically cause the program to terminate abnormally or produce incorrect results. Examples include division by zero, null pointer dereference, or out-of-bounds array access.</li>
+                        <li><strong>Compilation Errors:</strong> Compilation errors occur when the code fails to compile due to syntactic or semantic issues. These errors prevent the program from being translated into machine code and executed by the computer. Examples include syntax errors, type mismatch errors, or undefined symbols.</li>
+                        <li><strong>Linker Errors:</strong> Linker errors occur during the linking phase of the compilation process when the linker fails to resolve references to external symbols or libraries. These errors prevent the creation of the final executable file. Examples include missing function definitions, duplicate symbols, or incompatible library versions.</li>
+                    </ul>
+
+                    <h2>Handling Errors:</h2>
+                    <p>Effective error handling is essential for writing robust and reliable software. Strategies for handling errors include:</p>
+                    <ul>
+                        <li><strong>Debugging:</strong> Debugging involves identifying and fixing errors in the code using tools like debuggers, logging, and code inspection.</li>
+                        <li><strong>Exception Handling:</strong> Exception handling involves catching and handling runtime errors gracefully to prevent program crashes. Languages like Java, Python, and C++ provide mechanisms for throwing and catching exceptions.</li>
+                        <li><strong>Error Logging:</strong> Error logging involves recording information about errors, such as timestamps, error messages, and stack traces, for debugging and troubleshooting purposes.</li>
+                        <li><strong>Testing:</strong> Testing involves systematically verifying the correctness and robustness of the software through various testing techniques, such as unit testing, integration testing, and system testing.</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+                    <p>Understanding the different types of errors and how to handle them is crucial for developing high-quality software. By identifying and addressing errors early in the development process, developers can improve the reliability, performance, and maintainability of their code.</p>
+
+            </div>
+            
+        </div>
+        
+            
+        
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="currentYear"></span>. Your One Stop Technical Blog. All rights reserved.</p>
+        <div class="email-subscription">
+            <label for="email">Subscribe to our newsletter:</label>
+            <br>
+            <input type="email" id="email" name="email" placeholder="Your email" style="border-radius: 5px;">
+            <button type="button">Subscribe</button>
+        </div>
+    </footer>
+</body>
+
+</html>
