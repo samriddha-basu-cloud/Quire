@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <script defer src="/script/script.js"></script>
+    <title>Quire - Your Technical Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img class="logo" id="logo" src="/assets/images/whiteLogo.png" alt="Quire Logo">
+        
+        <!-- Dark Mode Toggle Switch -->
+        <div class="switch-container">
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider">
+                    <i class="fas fa-moon"></i> <!-- Moon icon for light mode -->
+                    <i class="fas fa-sun"></i> <!-- Sun icon for dark mode -->
+                </span>
+            </label>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <div class="main-content art-content">
+            <!-- Article -->
+            <img src="./article_Pic.png" alt="Article Picture" class="article-image">
+            <h1 class="article-title-h1">Git & GitHub</h1>
+            <div class="author-info">
+                <img src="/assets/images/author_picture.png" alt="Author Picture" class="author-picture">
+                <div class="author-details">
+                    <p>Samriddha Basu</p>
+                    <p>February 15, 2024</p>
+                    <p>Git <i class="fas fa-tag"></i>, 
+                        GitHub <i class="fas fa-tag"></i>, 
+                        Version Control <i class="fas fa-tag"></i>
+                    </p>
+                </div>
+            </div>
+
+            <div class="article-excerpt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint architecto officia alias incidunt quaerat tempore maiores nisi reiciendis, repudiandae deserunt molestias error ipsa perspiciatis, atque, laudantium distinctio molestiae exercitationem aut.</p>
+            </div>
+            
+        </div>
+        
+            
+        
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="currentYear"></span>. Your One Stop Technical Blog. All rights reserved.</p>
+        <div class="email-subscription">
+            <label for="email">Subscribe to our newsletter:</label>
+            <br>
+            <input type="email" id="email" name="email" placeholder="Your email" style="border-radius: 5px;">
+            <button type="button">Subscribe</button>
+        </div>
+    </footer>
+</body>
+
+</html>

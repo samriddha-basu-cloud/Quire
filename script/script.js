@@ -27,40 +27,54 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-  // Get the search input field and search button
-  const searchInput = document.getElementById('searchInput');
-  const searchButton = document.getElementById('searchButton');
+// Get the search input field and search button
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
 
-  // Add click event listener to the search button
-  searchButton.addEventListener('click', function () {
-      // Get the search query
-      const searchQuery = searchInput.value.trim().toLowerCase();
+// Add click event listener to the search button
+searchButton.addEventListener('click', performSearch);
 
-      // Get all article titles
-      const articleTitles = document.querySelectorAll('.article-title');
+// Add keydown event listener to the search input field
+searchInput.addEventListener('keydown', function(event) {
+    // Check if the key pressed is Enter (key code 13)
+    if (event.keyCode === 13) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+        // Perform the search
+        performSearch();
+    }
+});
 
-      // Loop through each article title
-      articleTitles.forEach(function (title) {
-          // Get the article title text content
-          const articleTitle = title.textContent.toLowerCase();
+// Function to perform the search
+function performSearch() {
+    // Get the search query
+    const searchQuery = searchInput.value.trim().toLowerCase();
 
-          // Check if the search query is empty or the article title contains the search query
-          const isMatch = searchQuery === '' || articleTitle.includes(searchQuery);
+    // Get all article titles
+    const articleTitles = document.querySelectorAll('.article-title');
 
-          // Get the parent article grid element
-          const articleGrid = title.closest('.article');
+    // Loop through each article title
+    articleTitles.forEach(function (title) {
+        // Get the article title text content
+        const articleTitle = title.textContent.toLowerCase();
 
-          // Show or hide the article grid based on the search result
-          articleGrid.style.display = isMatch ? 'block' : 'none';
-      });
-  });
+        // Check if the search query is empty or the article title contains the search query
+        const isMatch = searchQuery === '' || articleTitle.includes(searchQuery);
 
-  // Immediately display all articles when the search bar is empty
-  searchInput.addEventListener('input', function () {
-      if (searchInput.value.trim() === '') {
-          const articleGrids = document.querySelectorAll('.article');
-          articleGrids.forEach(function (grid) {
-              grid.style.display = 'block';
-          });
-      }
-  });
+        // Get the parent article grid element
+        const articleGrid = title.closest('.article');
+
+        // Show or hide the article grid based on the search result
+        articleGrid.style.display = isMatch ? 'block' : 'none';
+    });
+}
+
+// Immediately display all articles when the search bar is empty
+searchInput.addEventListener('input', function () {
+    if (searchInput.value.trim() === '') {
+        const articleGrids = document.querySelectorAll('.article');
+        articleGrids.forEach(function (grid) {
+            grid.style.display = 'block';
+        });
+    }
+});
