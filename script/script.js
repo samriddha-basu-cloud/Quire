@@ -50,23 +50,27 @@ function performSearch() {
     // Get the search query
     const searchQuery = searchInput.value.trim().toLowerCase();
 
-    // Get all article titles
+    // Get all article titles and keywords
     const articleTitles = document.querySelectorAll('.article-title');
+    const articleKeywords = document.querySelectorAll('.keywords');
 
-    // Loop through each article title
-    articleTitles.forEach(function (title) {
-        // Get the article title text content
-        const articleTitle = title.textContent.toLowerCase();
+    // Loop through each article
+    for (let i = 0; i < articleTitles.length; i++) {
+        // Get the article title and keywords text content
+        const articleTitle = articleTitles[i].textContent.toLowerCase();
+        const articleKeywordText = articleKeywords[i].textContent.toLowerCase();
 
-        // Check if the search query is empty or the article title contains the search query
-        const isMatch = searchQuery === '' || articleTitle.includes(searchQuery);
+        // Check if the search query is empty or if it matches the title or keywords
+        const isMatch = searchQuery === '' || 
+                        articleTitle.includes(searchQuery) || 
+                        articleKeywordText.includes(searchQuery);
 
         // Get the parent article grid element
-        const articleGrid = title.closest('.article');
+        const articleGrid = articleTitles[i].closest('.article');
 
         // Show or hide the article grid based on the search result
         articleGrid.style.display = isMatch ? 'block' : 'none';
-    });
+    }
 }
 
 // Immediately display all articles when the search bar is empty
