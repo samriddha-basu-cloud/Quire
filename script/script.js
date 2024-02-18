@@ -82,3 +82,16 @@ searchInput.addEventListener('input', function () {
         });
     }
 });
+
+function copyToClipboard() {
+    const textToCopy = "http://example.com";
+    const encodedText = encodeURIComponent(textToCopy);
+    
+    navigator.clipboard.writeText(encodedText)
+        .then(() => {
+            console.log("Text copied to clipboard");
+        })
+        .catch((error) => {
+            console.error("Failed to copy text to clipboard:", error);
+        });
+}

@@ -36,7 +36,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
+    background-color: #000;
     padding: 10px;
     position: relative; /* Add position relative */
     box-shadow: 0 10px 55px rgba(209, 70, 70, 0.5);
@@ -99,7 +99,7 @@ body {
 }
 
 input:checked + .slider {
-    background-color: #210e63; /* Darker background in dark mode */
+    background-color: #3d3d3d92; /* Darker background in dark mode */
 }
 
 input:checked + .slider i.fa-moon {
@@ -467,3 +467,4 @@ footer {
         font-size: xx-small;
     }
 }
+
