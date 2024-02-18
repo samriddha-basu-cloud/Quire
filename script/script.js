@@ -83,15 +83,36 @@ searchInput.addEventListener('input', function () {
     }
 });
 
-function copyToClipboard() {
-    const textToCopy = "http://example.com";
-    const encodedText = encodeURIComponent(textToCopy);
-    
-    navigator.clipboard.writeText(encodedText)
-        .then(() => {
-            console.log("Text copied to clipboard");
+document.getElementById('copyButton').addEventListener('click', function() {
+    var text = 'Hello World';
+    navigator.clipboard.writeText(text)
+        .then(function() {
+            console.log('Text copied to clipboard successfully: ' + text);
+            alert('Text copied to clipboard successfully: ' + text);
         })
-        .catch((error) => {
-            console.error("Failed to copy text to clipboard:", error);
+        .catch(function(err) {
+            // If clipboard access is not granted, try using a fallback approach
+            fallbackCopyTextToClipboard(text);
         });
+});
+
+// Fallback function for older browsers or when clipboard access is not granted
+function fallbackCopyTextToClipboard(text) {
+    var textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+        console.log('Fallback: Text copy attempt was ' + msg);
+        alert('Fallback: Text copy attempt was ' + msg);
+    } catch (err) {
+        console.error('Fallback: Unable to copy text:', err);
+        alert('Fallback: Unable to copy text:', err);
+    }
+
+    document.body.removeChild(textArea);
 }
