@@ -85,15 +85,20 @@ searchInput.addEventListener('input', function () {
 
 document.getElementById('copyButton').addEventListener('click', function() {
     var text = 'Hello World';
-    navigator.clipboard.writeText(text)
-        .then(function() {
-            console.log('Text copied to clipboard successfully: ' + text);
-            alert('Text copied to clipboard successfully: ' + text);
-        })
-        .catch(function(err) {
-            // If clipboard access is not granted, try using a fallback approach
-            fallbackCopyTextToClipboard(text);
+    if (ZeroClipboard.isFlashUnusable()) {
+        fallbackCopyTextToClipboard(text);
+    } else {
+        var client = new ZeroClipboard(document.getElementById("copyButton"));
+        client.on("ready", function(readyEvent) {
+            client.on("copy", function(event) {
+                event.clipboardData.setData("text/plain", text);
+            });
+            client.on("aftercopy", function(event) {
+                console.log("Text copied to clipboard successfully: " + text);
+                alert("Text copied to clipboard successfully: " + text);
+            });
         });
+    }
 });
 
 // Fallback function for older browsers or when clipboard access is not granted
