@@ -35,7 +35,7 @@ const searchButton = document.getElementById('searchButton');
 searchButton.addEventListener('click', performSearch);
 
 // Add keydown event listener to the search input field
-searchInput.addEventListener('keydown', function(event) {
+searchInput.addEventListener('keydown', function (event) {
     // Check if the key pressed is Enter (key code 13)
     if (event.keyCode === 13) {
         // Prevent the default form submission behavior
@@ -61,9 +61,9 @@ function performSearch() {
         const articleKeywordText = articleKeywords[i].textContent.toLowerCase();
 
         // Check if the search query is empty or if it matches the title or keywords
-        const isMatch = searchQuery === '' || 
-                        articleTitle.includes(searchQuery) || 
-                        articleKeywordText.includes(searchQuery);
+        const isMatch = searchQuery === '' ||
+            articleTitle.includes(searchQuery) ||
+            articleKeywordText.includes(searchQuery);
 
         // Get the parent article grid element
         const articleGrid = articleTitles[i].closest('.article');
